@@ -1,0 +1,1 @@
+# recogito2-plugin-sdk
