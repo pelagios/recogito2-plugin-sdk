@@ -1,10 +1,14 @@
 name := "recogito-plugin-sdk"
 
+organization := "org.pelagios"
+
 version := "0.0.1"
 
-scalaVersion := "2.11.7"
+// Do not append Scala versions to the generated artifacts
+crossPaths := false
 
-resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/releases/"
+// This forbids including Scala related libraries into the dependency
+autoScalaLibrary := false
 
 /** Runtime dependencies **/
 libraryDependencies ++= Seq()
