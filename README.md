@@ -10,7 +10,9 @@ or open a ticket on the [issue tracker](https://github.com/pelagios/recogito2-pl
 
 The Recogito plugin API is based on the Java Virtual Machine (JVM). Tools that are written in Java
 or any [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) can be turned
-into a Recogito plugin natively. Simply provide a wrapper that implements the
+into a Recogito plugin natively.
+
+Simply provide a wrapper that implements the
 `org.pelagios.recogito.sdk.ner.NERInterface`. See the
 [examples](https://github.com/pelagios/recogito2-plugin-sdk/tree/master/src/main/java/org/pelagios/recogito/sdk/examples/ner)
 for a minimal plugin that shows how the interface works.
