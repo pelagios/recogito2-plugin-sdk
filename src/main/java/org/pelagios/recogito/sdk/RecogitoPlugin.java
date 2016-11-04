@@ -2,7 +2,7 @@ package org.pelagios.recogito.sdk;
 
 /**
  * Base interface for all types of Recogito server-side plugins.
- * 
+ *
  * @author Rainer Simon <rainer.simon@ait.ac.at>
  */
 public interface RecogitoPlugin {
