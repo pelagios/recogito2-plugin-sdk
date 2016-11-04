@@ -6,7 +6,7 @@ allows plugging in alternative Named Entity Recognition engines. Need something 
 Get in touch via the [Recogito Users Forum](http://commons.pelagios.org/groups/recogito-users/)
 or open a ticket on the [issue tracker](https://github.com/pelagios/recogito2-plugin-sdk/issues).
 
-## Creating your own Plugin
+## Writing your own Plugin
 
 The Recogito plugin API is based on the Java Virtual Machine (JVM). Tools that are written in Java
 or any [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) can be turned
