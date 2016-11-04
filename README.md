@@ -34,7 +34,7 @@ libraryDependencies ++= "org.pelagios" % "recogito-plugin-sdk" % "0.0.1" from "h
 
 Build your plugin as a .jar file. Make sure you add a [provider configuration file](http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html) to the jar, so
 that Recogito can load it. The configuration file is a simple text file, named
-`org.pelagios.recogito.sdk.ner.NERInterface`, located in the `META-INF/services` folder.
+`org.pelagios.recogito.sdk.ner.NERPlugin`, located in the `META-INF/services` folder.
 The file must contain a single line: the fully qualified name of your class that implements
 the interface. E.g.: `com.example.recogito.plugins.MyNERPlugin`.
 
