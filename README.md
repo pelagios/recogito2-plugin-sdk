@@ -15,7 +15,10 @@ into a Recogito plugin natively.
 Simply provide a wrapper that implements the
 [`org.pelagios.recogito.sdk.ner.NERPlugin`](https://github.com/pelagios/recogito2-plugin-sdk/blob/master/src/main/java/org/pelagios/recogito/sdk/ner/NERPlugin.java) interface. See the
 [examples](https://github.com/pelagios/recogito2-plugin-sdk/tree/master/src/main/java/org/pelagios/recogito/sdk/examples/ner)
-for a minimal plugin that shows how the interface works. The use of non-JVM programming
+for a minimal plugin that shows how the interface works. A more comprehensive example that
+wraps the [Stanford CoreNLP](http://stanfordnlp.github.io/CoreNLP/) Named Entity Recognition library is [available here](https://github.com/pelagios/recogito2/tree/master/plugins/org.pelagios/recogito.plugins.ner.stanford).
+
+The use of non-JVM programming
 languages (or external Web services) is also possible. However, you still need to provide a
 JVM wrapper that calls out to the external tool or service.
 
