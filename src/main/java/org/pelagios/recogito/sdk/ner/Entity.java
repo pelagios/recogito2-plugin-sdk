@@ -2,7 +2,7 @@ package org.pelagios.recogito.sdk.ner;
 
 import java.util.Objects;
 
-public class Phrase {
+public class Entity {
 	
   public final String chars;
   
@@ -10,7 +10,7 @@ public class Phrase {
   
   public final int charOffset;
 	
-  public Phrase(String chars, EntityType entityType, int charOffset) {
+  public Entity(String chars, EntityType entityType, int charOffset) {
 	this.chars = chars;
 	this.entityType = entityType;
     this.charOffset = charOffset;
@@ -18,10 +18,10 @@ public class Phrase {
   
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof Phrase))
+    if (!(obj instanceof Entity))
       return false;
     
-    Phrase other = (Phrase) obj;
+    Entity other = (Entity) obj;
     return chars.equals(other.chars) && 
       entityType.equals(other.entityType) && 
       charOffset == other.charOffset;

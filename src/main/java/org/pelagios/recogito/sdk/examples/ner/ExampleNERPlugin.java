@@ -1,9 +1,14 @@
-package org.pelagios.recogito.sdk.ner;
+package org.pelagios.recogito.sdk.examples.ner;
 
 import java.util.List;
+
+import org.pelagios.recogito.sdk.ner.EntityType;
+import org.pelagios.recogito.sdk.ner.NERPlugin;
+import org.pelagios.recogito.sdk.ner.Entity;
+
 import java.util.ArrayList;
 
-public class DummyNERPlugin implements NERPlugin {
+public class ExampleNERPlugin implements NERPlugin {
 
   /**
    * For testing and demonstration purposes, the dummy NER plugin
@@ -11,9 +16,9 @@ public class DummyNERPlugin implements NERPlugin {
    * this a sensible 
    */
   @Override
-  public List<Phrase> parse(String text) {
+  public List<Entity> parse(String text) {
     String[] words = text.split(" ");
-    List<Phrase> phrases = new ArrayList<Phrase>();
+    List<Entity> phrases = new ArrayList<Entity>();
 
     if (words.length == 0)
       return phrases;
@@ -26,7 +31,7 @@ public class DummyNERPlugin implements NERPlugin {
       runningOffset = text.indexOf(nextWord, runningOffset);
       
 	  if (startsWithUpperCase(nextWord)) {
-        phrases.add(new Phrase(
+        phrases.add(new Entity(
           nextWord,
           EntityType.LOCATION,
           runningOffset

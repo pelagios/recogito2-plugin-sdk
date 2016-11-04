@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface NERPlugin {
 	
-  public List<Phrase> parse(String text);
+  public List<Entity> parse(String text);
 	
 }
