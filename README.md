@@ -6,17 +6,25 @@ allows plugging in alternative Named Entity Recognition engines. Need something 
 Get in touch via the [Recogito Users Forum](http://commons.pelagios.org/groups/recogito-users/)
 or open a ticket on the [issue tracker](https://github.com/pelagios/recogito2-plugin-sdk/issues).
 
-# Creating your own Plugin
+## Creating your own Plugin
 
 The Recogito plugin API is based on the Java Virtual Machine (JVM). Tools that are written in Java
-or any other [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) can be turned
-natively into a Recogito plugin. In to do that, you need to provide a wrapper that implements the
+or any [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) can be turned
+into a Recogito plugin natively. Simply provide a wrapper that implements the
 `org.pelagios.recogito.sdk.ner.NERInterface`. See the
 [examples](https://github.com/pelagios/recogito2-plugin-sdk/tree/master/src/main/java/org/pelagios/recogito/sdk/examples/ner)
-for a minimal plugin that illustrates how the interface works.
+for a minimal plugin that shows how the interface works.
 
-The use of non-JVM programming languages or external Web services is also possible. But you will
+The use of non-JVM programming languages (or external Web services) is also possible. However, you
 still need to provide a JVM wrapper that calls out to the tools or service.
+
+## Bulding your plugin
+
+Build your plugin as a .jar file. Make sure you add a [provider configuration file](http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html) to the jar file, so
+that Recogito can load it correctly. The configuration file as simple text file, which must be
+named `org.pelagios.recogito.sdk.ner.NERInterface`, and located in the `META-INF/services` folder.
+The file must contain a single line - the fully qualified name of your class that implements
+the interface. E.g.: `com.example.recogito.plugins.MyNERPlugin`.
 
 ## Using the SDK
 
