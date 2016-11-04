@@ -15,12 +15,19 @@ into a Recogito plugin natively.
 Simply provide a wrapper that implements the
 `org.pelagios.recogito.sdk.ner.NERInterface`. See the
 [examples](https://github.com/pelagios/recogito2-plugin-sdk/tree/master/src/main/java/org/pelagios/recogito/sdk/examples/ner)
-for a minimal plugin that shows how the interface works.
+for a minimal plugin that shows how the interface works. The use of non-JVM programming
+languages (or external Web services) is also possible. However, you still need to provide a
+JVM wrapper that calls out to the tools or service.
 
-The use of non-JVM programming languages (or external Web services) is also possible. However, you
-still need to provide a JVM wrapper that calls out to the tools or service.
+To use the SDK in your code, add the `recogito-plugin-sdk-0.0.1.jar` file to your project, either
+as an unmanaged dependency [(download here)](https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar),
+or by adding it to your build path with your favourite build tool. E.g. in SBT:
 
-## Bulding your plugin
+```
+libraryDependencies ++= "org.pelagios" % "recogito-plugin-sdk" % "0.0.1" from "https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar"
+ ```
+
+## Building your plugin
 
 Build your plugin as a .jar file. Make sure you add a [provider configuration file](http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html) to the jar file, so
 that Recogito can load it correctly. The configuration file as simple text file, which must be
@@ -28,15 +35,10 @@ named `org.pelagios.recogito.sdk.ner.NERInterface`, and located in the `META-INF
 The file must contain a single line - the fully qualified name of your class that implements
 the interface. E.g.: `com.example.recogito.plugins.MyNERPlugin`.
 
-## Using the SDK
+## Using your plugin
 
-To use the SDK, add the `recogito-plugin-sdk-0.0.1.jar` file to your project, either as an
-unmanaged dependency [(download here)](https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar)
-or by adding it to your build path with your favourite build tool. E.g. example for SBT:
-
-```
-libraryDependencies ++= "org.pelagios" % "recogito-plugin-sdk" % "0.0.1" from "https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar"
- ```
+To use your plugin in Recogito, place it anywhere in the `plugins` folder (or any subfolder), and
+restart Recogito.
 
 ## Building the SDK
 
