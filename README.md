@@ -8,10 +8,9 @@ or open a ticket on the [issue tracker](https://github.com/pelagios/recogito2-pl
 
 ## Writing your own Plugin
 
-The Recogito plugin API is based on the Java Virtual Machine (JVM). Tools that are written in Java
-or any [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) can be turned
-into a Recogito plugin natively. The use of non-JVM programming
-languages (or external Web services) is also possible. However, you still need to provide a
+Tools that are written in Java or any [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) 
+can be turned into Recogito plugins natively (since the plugin API is JVM-based). The use of non-JVM 
+programming languages or external Web services is also possible. However, you need to provide a
 JVM wrapper that calls out to the external tool or service.
 
 Simply provide a wrapper that implements the
