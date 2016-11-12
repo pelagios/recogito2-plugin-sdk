@@ -10,17 +10,15 @@ or open a ticket on the [issue tracker](https://github.com/pelagios/recogito2-pl
 
 The Recogito plugin API is based on the Java Virtual Machine (JVM). Tools that are written in Java
 or any [JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages) can be turned
-into a Recogito plugin natively.
+into a Recogito plugin natively. The use of non-JVM programming
+languages (or external Web services) is also possible. However, you still need to provide a
+JVM wrapper that calls out to the external tool or service.
 
 Simply provide a wrapper that implements the
 [`org.pelagios.recogito.sdk.ner.NERPlugin`](https://github.com/pelagios/recogito2-plugin-sdk/blob/master/src/main/java/org/pelagios/recogito/sdk/ner/NERPlugin.java) interface. See the
 [examples](https://github.com/pelagios/recogito2-plugin-sdk/tree/master/src/main/java/org/pelagios/recogito/sdk/examples/ner)
 for a minimal plugin that shows how the interface works. A more comprehensive example that
 wraps the [Stanford CoreNLP](http://stanfordnlp.github.io/CoreNLP/) Named Entity Recognition library is [available here](https://github.com/pelagios/recogito2/tree/master/plugins/org.pelagios/recogito.plugins.ner.stanford).
-
-The use of non-JVM programming
-languages (or external Web services) is also possible. However, you still need to provide a
-JVM wrapper that calls out to the external tool or service.
 
 To use the SDK in your code, add the `recogito-plugin-sdk-0.0.1.jar` file to your project, either
 as an unmanaged dependency [(download here)](https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar),
