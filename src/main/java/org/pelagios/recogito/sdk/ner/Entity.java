@@ -1,5 +1,6 @@
 package org.pelagios.recogito.sdk.ner;
 
+import java.net.URI;
 import java.util.Objects;
 
 /**
@@ -15,11 +16,18 @@ public class Entity {
   public final EntityType entityType;
 
   public final int charOffset;
-
+  
+  public final URI uri;
+  
   public Entity(String chars, EntityType entityType, int charOffset) {
+    this(chars, entityType, charOffset, null);
+  }
+
+  public Entity(String chars, EntityType entityType, int charOffset, URI uri) {
     this.chars = chars;
     this.entityType = entityType;
     this.charOffset = charOffset;
+    this.uri = uri;
   }
 
   @Override
