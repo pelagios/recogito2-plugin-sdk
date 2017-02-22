@@ -20,11 +20,11 @@ for a minimal plugin that shows how the interface works. A more comprehensive ex
 wraps the [Stanford CoreNLP](http://stanfordnlp.github.io/CoreNLP/) Named Entity Recognition library is [available here](https://github.com/pelagios/recogito2/tree/master/plugins/org.pelagios/recogito.plugins.ner.stanford).
 
 To use the SDK in your code, add the `recogito-plugin-sdk-0.0.1.jar` file to your project, either
-as an unmanaged dependency [(download here)](https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar),
+as an unmanaged dependency [(download here)](https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.2/recogito-plugin-sdk-0.0.2.jar),
 or by adding it to your build path with your favourite build tool. E.g. in SBT:
 
 ```
-libraryDependencies ++= "org.pelagios" % "recogito-plugin-sdk" % "0.0.1" from "https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.1/recogito-plugin-sdk-0.0.1.jar"
+libraryDependencies ++= "org.pelagios" % "recogito-plugin-sdk" % "0.0.2" from "https://github.com/pelagios/recogito2-plugin-sdk/releases/download/v0.0.2/recogito-plugin-sdk-0.0.2.jar"
  ```
 
 ## Building your plugin
