@@ -2,7 +2,9 @@ name := "recogito-plugin-sdk"
 
 organization := "org.pelagios"
 
-version := "0.0.2"
+version := "0.0.3"
+
+scalaVersion := "2.11.11"
 
 // Do not append Scala versions to the generated artifacts
 crossPaths := false
