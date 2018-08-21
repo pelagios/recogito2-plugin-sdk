@@ -48,7 +48,12 @@ public class Entity {
   }
 
   public String toString() {
-    return "[" + chars + "|" + entityType.toString() + "|" + charOffset + "]";
+    return String.join("|",  new String[]{
+                                            chars,
+                                            entityType.toString(),
+                                            Integer.toString(charOffset),
+                                            uri.toString()
+                                         });
   }
 
 }
