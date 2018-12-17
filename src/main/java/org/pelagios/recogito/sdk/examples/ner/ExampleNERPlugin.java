@@ -36,7 +36,7 @@ public class ExampleNERPlugin implements NERPlugin {
   /**
    * For testing and demonstration purposes, the dummy NER plugin
    * reports a 'LOCATION' entity for every uppercase word. Don't consider
-   * this a sensible
+   * this a sensible approach...
    */
   @Override
   public List<Entity> parse(String text) {
@@ -53,13 +53,14 @@ public class ExampleNERPlugin implements NERPlugin {
       String nextWord = words[runningIdx];
       runningOffset = text.indexOf(nextWord, runningOffset);
 
-      if (startsWithUpperCase(nextWord)) {
-        phrases.add(new Entity(
-        nextWord,
-        EntityType.LOCATION,
-        runningOffset
-        ));
-      }
+      if (startsWithUpperCase(nextWord))
+        phrases.add(
+          new Entity(
+            nextWord,
+            EntityType.LOCATION,
+            runningOffset
+          )
+        );
 
       runningIdx++;
       runningOffset += nextWord.length();
