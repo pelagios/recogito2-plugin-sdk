@@ -3,6 +3,7 @@ package org.pelagios.recogito.sdk.examples.ner;
 import static org.junit.Assert.*;
 import java.util.List;
 import org.junit.Test;
+import org.pelagios.recogito.sdk.PluginEnvironment;
 import org.pelagios.recogito.sdk.examples.ner.ExampleNERPlugin;
 import org.pelagios.recogito.sdk.ner.EntityType;
 import org.pelagios.recogito.sdk.ner.Entity;
@@ -19,7 +20,7 @@ public class ExampleNERPluginTest {
   @Test
   public void test() {
     ExampleNERPlugin plugin = new ExampleNERPlugin();
-    List<Entity> entities = plugin.parse(SAMPLE_TEXT);
+    List<Entity> entities = plugin.parse(SAMPLE_TEXT, new PluginEnvironment("."));
 
     assertEquals(3, entities.size());
     assertEquals(firstExpectedMatch, entities.get(0));

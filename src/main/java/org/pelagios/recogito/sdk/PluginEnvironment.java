@@ -17,13 +17,13 @@ public class PluginEnvironment {
   private File pluginsFolder;
   private Map<String, String> config;
 
-  public PluginEnvironment(File pluginsFolder) {
-    this.pluginsFolder = pluginsFolder;
+  public PluginEnvironment(String pluginsFolder) {
+    this.pluginsFolder = new File(pluginsFolder);
     this.config = new HashMap<String, String>();
   }
 
-  public PluginEnvironment(File pluginsFolder, Map<String, String> config) {
-    this.pluginsFolder = pluginsFolder;
+  public PluginEnvironment(String pluginsFolder, Map<String, String> config) {
+    this.pluginsFolder = new File(pluginsFolder);
     this.config = config;
   }
 
@@ -43,8 +43,9 @@ public class PluginEnvironment {
 
     File match = null; // I hate java
     for (File f : files) {
-      if (f.getName() == filename && f.isFile())
+      if (f.getName().equals(filename) && f.isFile()) {
         match = f;
+      }
     }
 
     if (match == null) {
@@ -57,8 +58,9 @@ public class PluginEnvironment {
       // Recurse for all subfolders
       for (File subfolder: subfolders) {
         File maybeMatch = findRecursive(filename, subfolder);
-        if (maybeMatch != null) 
-          return maybeMatch;        
+        if (maybeMatch != null) {
+          return maybeMatch;     
+        }   
       }
 
       return null;
@@ -70,10 +72,11 @@ public class PluginEnvironment {
   /** Finds the given file in the environment's plugin folder **/
   public String findFile(String filename) {
     File f = findRecursive(filename, this.pluginsFolder);
-    if (f == null) 
+    if (f == null) {
       return null;
-    else
+    } else {
       return f.getAbsolutePath();
+    }
   }
 
 }
