@@ -2,6 +2,7 @@ package org.pelagios.recogito.sdk.examples.ner;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.pelagios.recogito.sdk.PluginEnvironment;
 import org.pelagios.recogito.sdk.ner.EntityType;
 import org.pelagios.recogito.sdk.ner.NERPlugin;
 import org.pelagios.recogito.sdk.ner.Entity;
@@ -39,7 +40,7 @@ public class ExampleNERPlugin implements NERPlugin {
    * this a sensible approach...
    */
   @Override
-  public List<Entity> parse(String text) {
+  public List<Entity> parse(String text, PluginEnvironment env) {
     String[] words = text.split(" ");
     List<Entity> phrases = new ArrayList<Entity>();
 

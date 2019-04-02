@@ -1,6 +1,7 @@
 package org.pelagios.recogito.sdk.ner;
 
 import java.util.List;
+import org.pelagios.recogito.sdk.PluginEnvironment;
 import org.pelagios.recogito.sdk.RecogitoPlugin;
 
 /**
@@ -22,6 +23,6 @@ public interface NERPlugin extends RecogitoPlugin {
    * Perform NER on the provided text string.
    * @return the list of recognized Entities
    */
-  public List<Entity> parse(String text);
+  public List<Entity> parse(String text, PluginEnvironment environment);
 
 }
