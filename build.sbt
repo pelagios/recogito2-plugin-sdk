@@ -2,7 +2,7 @@ name := "recogito-plugin-sdk"
 
 organization := "org.pelagios"
 
-version := "1.0"
+version := "2.0-RC"
 
 scalaVersion := "2.11.11"
 
