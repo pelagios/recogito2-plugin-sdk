@@ -13,7 +13,7 @@ public class EntityType {
   // Just some default helpers
   public static EntityType LOCATION = new EntityType("LOCATION");
   public static EntityType PERSON   = new EntityType("PERSON");
-  public static EntityType EVENT    = new EntityType("EVENT");
+  public static EntityType DATE     = new EntityType("DATE");
 
   private final String name;
 
